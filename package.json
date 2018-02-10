@@ -1,0 +1,28 @@
+{
+  "name": "electron-shutdown-command",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelcarreira/linux-release-info.git"
+  },
+  "keywords": [
+    "linux",
+    "release",
+    "info",
+    "os",
+    "distribution",
+    "arch",
+    "debian"
+  ],
+  "author": "Samuel Carreira <samuelcarreira@outlook.com> (http://www.samuelcarreira.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samuelcarreira/linux-release-info/issues"
+  },
+  "homepage": "https://github.com/samuelcarreira/linux-release-info#readme"
+}
