@@ -1,10 +1,10 @@
 linux-release-info
 =================
 
-Get Linux release info (distribution name, version, arch, release, etc.) from '/etc/os-release' file and from native os module. On Windows and Darwin it only returns common node os module info (platform, hostname, release and arch)
+Get Linux release info (distribution name, version, arch, release, etc.) from '/etc/os-release' file and from native os module. On Windows and Darwin platforms it only returns common node os module info (platform, hostname, release, and arch)
 
 ###Highlights
-* Lightweight without any dependecies (only native node modules)
+* Lightweight without any dependencies (only native Node modules)
 * Async file reading
 
 
@@ -76,6 +76,11 @@ Outputs:
   arch: 'x64',
   release: '10.0.16299' }
 ```
+
+####Extra tip
+If you want info about Windows or Mac releases, you can try the following modules from sindresorhus:
+https://www.npmjs.com/package/win-release
+https://www.npmjs.com/package/macos-release
 
 
 ## License

@@ -1,6 +1,6 @@
 {
   "name": "linux-release-info",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get Linux release info (distribution name, version, arch, release, etc.) from '/etc/os-release' file and from native os module. On Windows and Darwin it only returns common node os module info (platform, hostname, release and arch)",
   "main": "index.js",
   "scripts": {
