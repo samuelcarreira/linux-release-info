@@ -3,7 +3,7 @@ linux-release-info
 
 Get Linux release info (distribution name, version, arch, release, etc.) from '/etc/os-release' file and from native os module. On Windows and Darwin platforms it only returns common node os module info (platform, hostname, release, and arch)
 
-###Highlights
+### Highlights
 * Lightweight without any dependencies (only native Node modules)
 * Async file reading
 
@@ -68,6 +68,31 @@ Outputs:
   support_url: 'http://www.raspbian.org/RaspbianForums',
   bug_report_url: 'http://www.raspbian.org/RaspbianBugs' }
 ```
+**Linux (Fedora)**
+```
+{ type: 'Linux',
+  platform: 'linux',
+  hostname: 'localhost-live',
+  arch: 'x64',
+  release: '4.13.9-300.fc27.x86_64',
+  name: 'Fedora',
+  version: '27 (Workstation Edition)',
+  id: 'fedora',
+  version_id: '27',
+  pretty_name: 'Fedora 27 (Workstation Edition)',
+  ansi_color: '0;34',
+  cpe_name: 'cpe:/o:fedoraproject:fedora:27',
+  home_url: 'https://fedoraproject.org/',
+  support_url: 'https://fedoraproject.org/wiki/Communicating_and_getting_help',
+  bug_report_url: 'https://bugzilla.redhat.com/',
+  redhat_bugzilla_product: 'Fedora',
+  redhat_bugzilla_product_version: '27',
+  redhat_support_product: 'Fedora',
+  redhat_support_product_version: '27',
+  privacy_policy_url: 'https://fedoraproject.org/wiki/Legal:PrivacyPolicy',
+  variant: 'Workstation Edition',
+  variant_id: 'workstation' }
+```
 **Windows**
 ```
 { type: 'Windows_NT',
@@ -77,9 +102,10 @@ Outputs:
   release: '10.0.16299' }
 ```
 
-####Extra tip
+#### Extra tip
 If you want info about Windows or Mac releases, you can try the following modules from sindresorhus:
 https://www.npmjs.com/package/win-release
+or
 https://www.npmjs.com/package/macos-release
 
 
