@@ -1,27 +1,28 @@
 linux-release-info
 =================
 
-Get Linux release info (distribution name, version, arch, release, etc.) from '/etc/os-release' file and from native os module. On Windows and Darwin platforms it only returns common node os module info (platform, hostname, release, and arch)
+Get Linux release info (distribution name, version, arch, release, etc.) from '/etc/os-release' or '/usr/lib/os-release' files and from native os module. On Windows and Darwin platforms it only returns common node os module info (platform, hostname, release, and arch)
 
 ### Highlights
 * Lightweight without any dependencies (only native Node modules)
-* Async file reading
-
-
+* Asynchronous file reading 
+* Synchronous file reading (NEW feature version >= 2.0.0)
+* Specify custom os-release file
 
 ## Installation
-
+```
     npm install --save linux-release-info
+```
+
 
 ## Usage
-
+**Basic usage (async)**
 ```
-const releaseInfo = require('linux-release-info')
+const releaseInfo = require('linux-release-info');
 
 releaseInfo()
     .then(result => {
-        console.log(`You are using ${result.pretty_name} on a ${result.arch} machine`) // Distro name (only on linux) and arch info
-        console.log(result) // all data
+        console.log(`You are using ${result.pretty_name} on a ${result.arch} machine`); // Distro name (only on linux) and arch info
     })
     .catch(err => console.error(`Error reading OS release info: ${err}`))
 ```
@@ -29,6 +30,29 @@ Outputs:
 ```
 > You are using Ubuntu 17.10 on a x64 machine
 ```
+**Synchronous read**
+```
+const releaseInfo = require('linux-release-info');
+
+try {
+    const infoSyncData = releaseInfo({mode: 'sync'});
+    console.log(`You are using ${infoSyncData.pretty_name} on a ${infoSyncData.arch} machine`)    
+} catch (err) {
+    console.error(`Error reading OS release info: ${err}`);
+}
+```
+**Custom file**
+```
+const infoSyncData = releaseInfo({mode: 'sync', custom_file: '/home/user/os_release_sample'), debug: true});
+```
+
+## Options
+- `options` `<Object>`
+  - `mode` `<string>`: 'sync' or 'async' mode. Default is *async* mode
+  - `custom_file` `<string>`: custom complete file path with os info. If not provided the system will search on the '/etc/os-release' and '/usr/lib/os-release' files. Default is `null/none`
+  - `debug` `<boolean>`: show console debug messages. Default is `false`
+
+
 
 #### Sample outputs
 **Linux**
@@ -101,6 +125,20 @@ Outputs:
   arch: 'x64',
   release: '10.0.16299' }
 ```
+**macOS**
+```
+{ type: 'Darwin',
+  platform: 'darwin',
+  hostname: 'Macbook-Air.home',
+  arch: 'x64',
+  release: '16.0.0' }
+```
+
+### Requirements
+You need Node.js v.8.x or greater to use the version 2.x of this module
+
+#### About the sync mode
+It's not recommended to use blocking functions to access the filesystem. Use the synchronous mode only if you need to.
 
 #### Extra tip
 If you want info about Windows or Mac releases, you can try the following modules from sindresorhus:

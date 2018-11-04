@@ -1,0 +1,4 @@
+NAME=SAMPLE_OS_RELEASE
+VERSION="2.0.0"
+ID=linux_release_info
+pretty_name="linux release info"

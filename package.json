@@ -1,7 +1,7 @@
 {
   "name": "linux-release-info",
-  "version": "1.0.1",
-  "description": "Get Linux release info (distribution name, version, arch, release, etc.) from '/etc/os-release' file and from native os module. On Windows and Darwin it only returns common node os module info (platform, hostname, release and arch)",
+  "version": "2.0.0",
+  "description": "Get Linux release info (distribution name, version, arch, release, etc.) from 'os-release' file and from native os module. On Windows and Darwin it only returns common node os module info (platform, hostname, release and arch)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/samuelcarreira/linux-release-info/issues"
   },
-  "homepage": "https://github.com/samuelcarreira/linux-release-info#readme"
+  "homepage": "https://github.com/samuelcarreira/linux-release-info#readme",
+  "devDependencies": {},
+  "engines": {
+    "node": ">=8.0"
+  },
+  "dependencies": {}
 }
