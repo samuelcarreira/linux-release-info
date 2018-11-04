@@ -41,7 +41,7 @@ try {
     console.error(`Error reading OS release info: ${err}`);
 }
 ```
-**Custom file**
+**Custom os_release file**
 ```
 const infoSyncData = releaseInfo({mode: 'sync', custom_file: '/home/user/os_release_sample'), debug: true});
 ```
@@ -49,12 +49,12 @@ const infoSyncData = releaseInfo({mode: 'sync', custom_file: '/home/user/os_rele
 ## Options
 - `options` `<Object>`
   - `mode` `<string>`: 'sync' or 'async' mode. Default is *async* mode
-  - `custom_file` `<string>`: custom complete file path with os info. If not provided the system will search on the '/etc/os-release' and '/usr/lib/os-release' files. Default is `null/none`
+  - `custom_file` `<string>`: custom complete filepath with os info. If not provided the system will search on the '/etc/os-release' and '/usr/lib/os-release' files. Default is `null/none`
   - `debug` `<boolean>`: show console debug messages. Default is `false`
 
 
 
-#### Sample outputs
+### Sample outputs
 **Linux**
 ```
 { type: 'Linux',
