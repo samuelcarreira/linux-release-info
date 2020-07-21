@@ -19,7 +19,7 @@ try {
   console.error(`Error reading OS release info: ${err}`);
 }
 
-
+// async test
 releaseInfo({
   custom_file: path.resolve(__dirname, 'os_release_sample'),
   debug: true
