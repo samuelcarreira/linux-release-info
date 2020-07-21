@@ -1,10 +1,16 @@
 {
   "name": "linux-release-info",
-  "version": "2.0.0",
+  "productName": "Linux Release Info",
+  "version": "3.0.0",
   "description": "Get Linux release info (distribution name, version, arch, release, etc.) from 'os-release' file and from native os module. On Windows and Darwin it only returns common node os module info (platform, hostname, release and arch)",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "publish": "npm publish",
+    "lint": "xo"
   },
   "repository": {
     "type": "git",
@@ -25,9 +31,14 @@
     "url": "https://github.com/samuelcarreira/linux-release-info/issues"
   },
   "homepage": "https://github.com/samuelcarreira/linux-release-info#readme",
-  "devDependencies": {},
   "engines": {
     "node": ">=8.0"
   },
-  "dependencies": {}
+  "devDependencies": {
+    "typescript": "^3.9.7",
+    "xo": "^0.32.1"
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }

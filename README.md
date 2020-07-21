@@ -1,24 +1,29 @@
-linux-release-info
-=================
+# Linux Release Info
 
 Get Linux release info (distribution name, version, arch, release, etc.) from '/etc/os-release' or '/usr/lib/os-release' files and from native os module. On Windows and Darwin platforms it only returns common node os module info (platform, hostname, release, and arch)
 
-### Highlights
-* Lightweight without any dependencies (only native Node modules)
-* Asynchronous file reading 
-* Synchronous file reading (NEW feature version >= 2.0.0)
-* Specify custom os-release file
+## Key Features
+* **Secure and lightweight:** (without any dependencies, only native Node modules)
+* **Asynchronous file reading**
+* **Synchronous file reading (NEW feature version >= 2.0.0)**
+* **Specify custom os-release file**
+* **Written in TypeScript**
+* **Well documented and easy to use**
 
 ## Installation
 ```
-    npm install --save linux-release-info
+npm install --save linux-release-info
 ```
+or
 
+```
+yarn add linux-release-info
+```
 
 ## Usage
 **Basic usage (async)**
 ```
-const releaseInfo = require('linux-release-info');
+const {releaseInfo} = require('linux-release-info');
 
 releaseInfo()
     .then(result => {
@@ -47,11 +52,11 @@ const infoSyncData = releaseInfo({mode: 'sync', custom_file: '/home/user/os_rele
 ```
 
 ## Options
-- `options` `<Object>`
-  - `mode` `<string>`: 'sync' or 'async' mode. Default is *async* mode
-  - `custom_file` `<string>`: custom complete filepath with os info. If not provided the system will search on the '/etc/os-release' and '/usr/lib/os-release' files. Default is `null/none`
-  - `debug` `<boolean>`: show console debug messages. Default is `false`
-
+Property         | Type     | Default    | Description
+---------------- | -------- | ---------- | ----------------------
+`mode`  | `string` | `async`     | 'sync' or 'async' mode
+`custom_file`  | `string` | `null/none`     | custom complete filepath with os info. If not provided the system will search on the `/etc/os-release` and `/usr/lib/os-release` files
+`debug`  | `boolean` | `false`     | show console debug messages
 
 
 ### Sample outputs
@@ -81,11 +86,12 @@ const infoSyncData = releaseInfo({mode: 'sync', custom_file: '/home/user/os_rele
   platform: 'linux',
   hostname: 'raspberrypi',
   arch: 'arm',
-  release: '4.9.59-v7+',
-  pretty_name: 'Raspbian GNU/Linux 9 (stretch)',
+  release: '4.19.118-v7+',
+  pretty_name: 'Raspbian GNU/Linux 10 (buster)',
   name: 'Raspbian GNU/Linux',
-  version_id: '9',
-  version: '9 (stretch)',
+  version_id: '10',
+  version: '10 (buster)',
+  version_codename: 'buster',
   id: 'raspbian',
   id_like: 'debian',
   home_url: 'http://www.raspbian.org/',
@@ -142,12 +148,14 @@ It's not recommended to use blocking functions to access the filesystem. Use the
 
 #### Extra tip
 If you want info about Windows or Mac releases, you can try the following modules from sindresorhus:
-https://www.npmjs.com/package/win-release
+- https://www.npmjs.com/package/win-release
+
 or
-https://www.npmjs.com/package/macos-release
+
+- https://www.npmjs.com/package/macos-release
 
 
 ## License
-Licensed under MIT
+- Licensed under MIT
 
-Copyright (c) 2018 [Samuel Carreira]
+- Copyright (c) 2018-2020 [Samuel Carreira]

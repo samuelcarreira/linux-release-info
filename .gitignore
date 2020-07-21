@@ -58,7 +58,3 @@ typings/
 .env
 
 .jshintrc
-
-.vscode/
-
-.gitignore

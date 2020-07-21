@@ -6,7 +6,7 @@
  */
 console.time('benchmark'); // benchmark startup
 
-const releaseInfo = require('./index');
+const {releaseInfo} = require('./dist/index');
 const path = require('path');
 
 console.log('Linux Release Info Test\n');

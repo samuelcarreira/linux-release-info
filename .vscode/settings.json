@@ -1,9 +1,5 @@
 {
-    "files.exclude": {
-        "**/.vscode": true,
-        "**/node_modules": true
-    },
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 2500,
-    "eslint.enable": false
+  "files.exclude": {
+    "**/node_modules": true
+  }
 }
