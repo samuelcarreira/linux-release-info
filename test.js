@@ -2,7 +2,7 @@
  * linux-release-info test
  * 
  * Licensed under MIT 
- * Copyright (c) 2018 [Samuel Carreira]
+ * Copyright (c) 2018-2020 [Samuel Carreira]
  */
 console.time('benchmark'); // benchmark startup
 
