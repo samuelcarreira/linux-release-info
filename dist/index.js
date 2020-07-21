@@ -10,7 +10,6 @@
  * Copyright (c) 2018-2020 [Samuel Carreira]
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.releaseInfo = void 0;
 const fs = require("fs");
 const os = require("os");
 const util_1 = require("util");
