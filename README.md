@@ -56,7 +56,7 @@ Property         | Type     | Default    | Description
 ---------------- | -------- | ---------- | ----------------------
 `mode`  | `string` | `async`     | 'sync' or 'async' mode
 `custom_file`  | `string` | `null/none`     | custom complete filepath with os info. If not provided the system will search on the `/etc/os-release` and `/usr/lib/os-release` files
-`debug`  | `boolean` | `false`     | show console debug messages
+`debug`  | `boolean` | `false`     | shows console debug messages
 
 
 ### Sample outputs
